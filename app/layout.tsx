@@ -46,7 +46,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} min-h-screen flex flex-col bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800 overflow-x-hidden`}
       >
-        <NextTopLoader height={2} />
+        <NextTopLoader color="#6366F1" height={3} />
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />
