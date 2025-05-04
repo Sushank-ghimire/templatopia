@@ -626,37 +626,7 @@ export const uiComponents: UIComponent[] = [
     preview:
       "A breadcrumb navigation component showing the path from home to the current page.",
   },
-  {
-    id: "modal-dialog",
-    name: "Modal Dialog",
-    description:
-      "A modal/dialog component for displaying important information",
-    category: "modals",
-    image: "https://images.unsplash.com/photo-1555664424-778a1e5e1b48",
-    code: `<div class="fixed inset-0 bg-gray-500 bg-opacity-75 flex items-center justify-center z-50">
-  <div class="bg-white dark:bg-gray-800 rounded-lg shadow-xl transform transition-all max-w-lg w-full">
-    <div class="p-6">
-      <div class="flex items-start justify-between">
-        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Modal Title</h3>
-        <button class="text-gray-400 hover:text-gray-500">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-      <div class="mt-4">
-        <p class="text-gray-600 dark:text-gray-300">Your modal content goes here. This could be text, form elements, or other components.</p>
-      </div>
-      <div class="mt-6 flex justify-end space-x-3">
-        <button class="px-4 py-2 border border-gray-300 rounded-md text-sm font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700">Cancel</button>
-        <button class="px-4 py-2 bg-primary border border-transparent rounded-md text-sm font-medium text-white hover:bg-primary-dark">Confirm</button>
-      </div>
-    </div>
-  </div>
-</div>`,
-    preview:
-      "A modal dialog box with a title, content area, and action buttons.",
-  },
+
   {
     id: "alert-component",
     name: "Alert Component",

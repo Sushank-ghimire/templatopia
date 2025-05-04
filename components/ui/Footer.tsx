@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
@@ -9,8 +10,16 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Logo & Description */}
           <div>
-            <Link href="/" className="inline-block font-bold text-2xl mb-4">
-              <span className="text-primary mr-1">T</span>emplatopia
+            <Link href="/" className="flex justify-start items-center font-bold text-2xl mb-4">
+              <Image
+                loading="lazy"
+                width={64}
+                height={64}
+                src={"/Logo.svg"}
+                aria-label="Logo"
+                alt="Logo"
+              />
+              Templatopia
             </Link>
             <p className="text-gray-400 mb-6">
               Premium website templates and UI components for modern web

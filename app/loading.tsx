@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function Loading() {
@@ -83,11 +84,16 @@ export default function Loading() {
           initial="hidden"
           animate={["visible", "pulse"]}
           variants={logoVariants}
-          className="relative z-10 flex items-center justify-center w-20 h-20 bg-white dark:bg-gray-800 rounded-lg shadow-lg"
+          className="relative z-10 flex items-center justify-center w-20 h-20 bg-transparent rounded-lg shadow-lg"
         >
-          <span className="text-2xl font-bold text-indigo-600 dark:text-indigo-400">
-            T
-          </span>
+          <Image
+            loading="lazy"
+            width={64}
+            height={64}
+            src={"/Logo.svg"}
+            aria-label="Logo"
+            alt="Logo"
+          />
         </motion.div>
       </div>
 
