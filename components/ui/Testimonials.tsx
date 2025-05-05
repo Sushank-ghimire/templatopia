@@ -17,7 +17,7 @@ const testimonials = [
     name: "Sarah Johnson",
     role: "UX Designer",
     content:
-      "As a designer, I appreciate the attention to detail in these templates. They're beautiful and highly customizable.",
+      "As a designer, I appreciate the attention to detail in these templates. They&lsquo;re beautiful and highly customizable.",
     rating: 5,
     avatar: "SJ",
   },
@@ -153,7 +153,7 @@ const Testimonials = () => {
                 </div>
 
                 <p className="text-xl md:text-2xl font-medium text-gray-800 dark:text-white mb-6">
-                  "{testimonials[current].content}"
+                  &ldquo;{testimonials[current].content}&ldquo;
                 </p>
 
                 <div className="text-primary font-semibold">

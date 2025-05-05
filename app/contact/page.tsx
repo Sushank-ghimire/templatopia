@@ -12,7 +12,7 @@ export default function ContactPage() {
           <div className="text-center mb-16">
             <h1 className="heading-1 mb-4 text-white">Get in Touch</h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-              Have questions about our templates or need custom work? We're here
+              Have questions about our templates or need custom work? We&lsquo;re here
               to help.
             </p>
           </div>
@@ -63,7 +63,7 @@ export default function ContactPage() {
                         contact@ghimiresushank.com.np
                       </p>
                       <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
-                        We'll respond within 24 hours
+                        We&lsquo;ll respond within 24 hours
                       </p>
                     </div>
                   </div>

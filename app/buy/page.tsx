@@ -7,12 +7,13 @@ import FadeIn from "@/components/animations/FadeIn";
 import PricingTable from "@/components/ui/PricingTable";
 import Testimonials from "@/components/ui/Testimonials";
 import { templates } from "@/lib/data";
+import { Template } from "@/types";
 
 export default function BuyPage() {
   const searchParams = useSearchParams();
   const templateId = searchParams.get("id");
 
-  const [template, setTemplate] = useState<any>(null);
+  const [template, setTemplate] = useState<Template | null>(null);
   const [currentImage, setCurrentImage] = useState(0);
 
   useEffect(() => {
@@ -113,12 +114,14 @@ export default function BuyPage() {
         {/* Features */}
         <section className="mb-20">
           <FadeIn>
-            <h2 className="heading-2 text-center mb-12 text-white">Template Features</h2>
+            <h2 className="heading-2 text-center mb-12 text-white">
+              Template Features
+            </h2>
           </FadeIn>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {template.features &&
-              template.features.map((feature: any, idx: number) => (
+              template.features.map((feature, idx: number) => (
                 <FadeIn key={idx} delay={idx * 0.1}>
                   <div className="bg-white dark:bg-gray-800 p-6 rounded-xl shadow-md">
                     <div className="text-primary mb-4">
@@ -152,7 +155,9 @@ export default function BuyPage() {
         {/* Pricing Section */}
         <section className="mb-20">
           <FadeIn>
-            <h2 className="heading-2 text-center mb-12 text-white">Choose Your License</h2>
+            <h2 className="heading-2 text-center mb-12 text-white">
+              Choose Your License
+            </h2>
           </FadeIn>
 
           <PricingTable templateName={template.name} price={template.price} />
@@ -204,7 +209,9 @@ export default function BuyPage() {
                 <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md overflow-hidden">
                   <details className="group">
                     <summary className="flex justify-between items-center font-medium cursor-pointer p-6">
-                      <h3 className="text-lg font-semibold text-white">{faq.question}</h3>
+                      <h3 className="text-lg font-semibold text-white">
+                        {faq.question}
+                      </h3>
                       <svg
                         className="transition-transform duration-300 group-open:rotate-180 text-white"
                         xmlns="http://www.w3.org/2000/svg"

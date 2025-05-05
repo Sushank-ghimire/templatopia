@@ -1,5 +1,4 @@
 "use client";
-
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -8,10 +7,22 @@ export default function NotFound() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isHovered, setIsHovered] = useState(false);
 
+  const [windowDimensions, setWindowDimensions] = useState({
+    width: 0,
+    height: 0,
+  });
+
+
   useEffect(() => {
+    if (typeof window === "undefined") return;
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
+
+    setWindowDimensions({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    })
 
     window.addEventListener("mousemove", handleMouseMove);
 
@@ -22,8 +33,8 @@ export default function NotFound() {
 
   // Calculate position for elements that follow the mouse
   const calculatePosition = (offsetX = 0, offsetY = 0, intensity = 0.02) => {
-    const x = (mousePosition.x - window.innerWidth / 2) * intensity + offsetX;
-    const y = (mousePosition.y - window.innerHeight / 2) * intensity + offsetY;
+    const x = (mousePosition.x - windowDimensions.width / 2) * intensity + offsetX;
+    const y = (mousePosition.y - windowDimensions.height / 2) * intensity + offsetY;
     return { x, y };
   };
 
@@ -75,7 +86,6 @@ export default function NotFound() {
       transition: {
         duration: 0.5,
         repeat: Infinity,
-        repeatType: "mirror",
         repeatDelay: 5,
       },
     },
@@ -121,7 +131,6 @@ export default function NotFound() {
           className="text-9xl font-extrabold text-white leading-tight mb-6"
           variants={glitchAnimation}
           animate={isHovered ? "animate" : "initial"}
-          variants={glitchAnimation}
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
           style={{
@@ -170,16 +179,16 @@ export default function NotFound() {
           className="text-2xl font-medium text-indigo-200 mb-8"
           variants={itemVariants}
         >
-          Oops! It seems the page you're looking for has gone missing in the
-          digital void.
+          Oops! It seems the page you&lsquo;re looking for has gone missing in
+          the digital void.
         </motion.p>
 
         <motion.p
           className="text-lg text-indigo-200/80 mb-12"
           variants={itemVariants}
         >
-          Perhaps it's being redesigned with our cutting-edge templates or it
-          never existed in the first place.
+          Perhaps it&lsquo;s being redesigned with our cutting-edge templates or
+          it never existed in the first place.
         </motion.p>
 
         {/* Navigation buttons */}

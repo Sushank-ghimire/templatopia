@@ -10,6 +10,7 @@ import { templates } from "@/lib/data";
 export default function HomePage() {
   // Calculate viewport height for mobile browsers
   useEffect(() => {
+    if (typeof window === "undefined") return;
     const setVh = () => {
       const vh = window.innerHeight * 0.01;
       document.documentElement.style.setProperty("--vh", `${vh}px`);
@@ -211,8 +212,8 @@ export default function HomePage() {
                   </div>
                 </div>
                 <p className="text-gray-600 dark:text-gray-300">
-                  "The templates from Templatopia saved me so much time. Clean
-                  code and beautiful design right out of the box!"
+                  &ldquo;The templates from Templatopia saved me so much time.
+                  Clean code and beautiful design right out of the box!&ldquo;
                 </p>
                 <div className="mt-4 flex">
                   {[...Array(5)].map((_, i) => (
@@ -248,8 +249,9 @@ export default function HomePage() {
                   </div>
                 </div>
                 <p className="text-gray-600 dark:text-gray-300">
-                  "As a designer, I appreciate the attention to detail in these
-                  templates. They're beautiful and highly customizable."
+                  &ldquo;As a designer, I appreciate the attention to detail in
+                  these templates. They&lsquo;re beautiful and highly
+                  customizable.&ldquo;
                 </p>
                 <div className="mt-4 flex">
                   {[...Array(5)].map((_, i) => (
@@ -285,8 +287,9 @@ export default function HomePage() {
                   </div>
                 </div>
                 <p className="text-gray-600 dark:text-gray-300">
-                  "Launched our company website using a Templatopia template.
-                  The process was quick and the result looks professional."
+                  &ldquo;Launched our company website using a Templatopia
+                  template. The process was quick and the result looks
+                  professional.&ldquo;
                 </p>
                 <div className="mt-4 flex">
                   {[...Array(5)].map((_, i) => (

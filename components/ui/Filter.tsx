@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 interface FilterProps {
@@ -20,6 +20,21 @@ const Filter: React.FC<FilterProps> = ({
   onSortChange,
 }) => {
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
+
+  const [windowDimensions, setWindowDimensions] = useState({
+    width: 0,
+    height: 0,
+  });
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    if (typeof window !== "undefined") {
+      setWindowDimensions({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+  }, []);
 
   return (
     <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md p-6">
@@ -56,8 +71,9 @@ const Filter: React.FC<FilterProps> = ({
         }`}
         initial={{ opacity: 0, height: 0 }}
         animate={{
-          opacity: isMobileFilterOpen || window.innerWidth >= 768 ? 1 : 0,
-          height: isMobileFilterOpen || window.innerWidth >= 768 ? "auto" : 0,
+          opacity: isMobileFilterOpen || windowDimensions.height >= 768 ? 1 : 0,
+          height:
+            isMobileFilterOpen || windowDimensions.width >= 768 ? "auto" : 0,
         }}
         transition={{ duration: 0.3 }}
       >

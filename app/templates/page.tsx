@@ -120,7 +120,7 @@ export default function TemplatesPage() {
                 </svg>
                 <h3 className="text-xl font-bold mb-2">No templates found</h3>
                 <p className="text-gray-600 dark:text-gray-400">
-                  We couldn't find any templates matching your criteria. Try
+                  We couldn&lsquo;t find any templates matching your criteria. Try
                   changing your filters.
                 </p>
               </motion.div>

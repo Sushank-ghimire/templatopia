@@ -180,7 +180,7 @@ const ContactForm = () => {
               />
             </svg>
             <p>
-              Your message has been sent successfully! We'll get back to you
+              Your message has been sent successfully! We&lsquo;ll get back to you
               soon.
             </p>
           </div>

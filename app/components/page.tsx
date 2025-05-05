@@ -97,7 +97,7 @@ export default function ComponentsPage() {
             </svg>
             <h3 className="text-xl font-bold mb-2">No components found</h3>
             <p className="text-gray-600 dark:text-gray-400">
-              We couldn't find any components in this category. Please try
+              We couldn&lsquo;t find any components in this category. Please try
               another category.
             </p>
           </div>
